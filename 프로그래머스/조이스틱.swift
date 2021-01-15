@@ -1,6 +1,4 @@
 func solution(_ name: String) -> Int {
-    //    var result = Array(repeating: "A", count: name.count)
-    //    var arrayName = name.map { $0 }
     var stick: [Int] = [0, 0, 0, 0]
     
     let n = Array(repeating: "A", count: name.count)
@@ -15,7 +13,6 @@ func solution(_ name: String) -> Int {
         }
     }
     var count = 0
-    //n.reduce("", { $0 + $1 }) != name
     while visited.contains(false)  {
         for i in 0 ... name.count - 1 {
             if visited[(count + i) % string.count] == false {
@@ -43,5 +40,3 @@ func solution(_ name: String) -> Int {
     
     return stick.reduce(0, { $0 + $1 })
 }
-
-print(solution(name))
